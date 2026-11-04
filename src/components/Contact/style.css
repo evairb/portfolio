@@ -1,0 +1,59 @@
+.contact {
+  padding-top: 80px;
+}
+
+.contact-card {
+  position: relative;
+  overflow: hidden;
+  padding: 75px 30px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    #17142a,
+    #111c2c
+  );
+  border: 1px solid rgba(155, 123, 255, 0.25);
+  border-radius: 25px;
+}
+
+.contact-glow {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: var(--purple);
+  opacity: 0.13;
+  filter: blur(120px);
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.contact-content {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-content h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.contact-content > p:not(.section-label) {
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 550px;
+  margin: 0 auto 30px;
+}
+
+@media (max-width: 550px) {
+  .contact-card {
+    padding: 55px 20px;
+  }
+
+  .contact-content h2 {
+    font-size: 2rem;
+  }
+}
