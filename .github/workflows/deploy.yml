@@ -36,6 +36,17 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Verify build output
+        run: |
+          echo "Conteúdo da pasta dist:"
+          find dist -maxdepth 2 -type f -print
+
+          echo "Referências CSS no index.html:"
+          grep -oE 'href="[^"]+\.css"' dist/index.html
+
+          test -d dist/assets
+          test -f dist/index.html
+
       - name: Upload build
         uses: actions/upload-pages-artifact@v3
         with:
